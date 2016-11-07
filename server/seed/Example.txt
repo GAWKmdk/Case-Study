@@ -1,0 +1,65 @@
+// meteor add dburles:factory
+// meteor add digilord:faker
+
+// A factory allows you to create new objects in the database with random attributes
+// Good for testing and development
+// Random values are generated using Faker
+
+Factory.define('user', Meteor.users, {
+  username: function(){
+    return faker.internet.userName() + _.random(0,1000);
+  },
+
+  emails: function(){
+    var email = faker.internet.email();
+    return [{
+      address: email,
+      verified: true
+    }]
+  },
+
+  profile: function(){
+    return {
+      name: 'name',
+      email: faker.internet.email(),
+      profilePictureUrl: "/images/user" + _.random(1,7) + ".jpg"
+    }
+  },
+  
+  gender: function(){
+    return ['Either', 'Male', 'Female'][_.random(0,2)];
+  },
+  
+  description: function(){
+    return faker.lorem.paragraphs(3);
+  },
+  
+  startTime: function(){
+    // needs moment.js package
+    // some date within the next month
+    return moment().add(_.random(0,31), 'days').add(_.random(0,24), 'hours').toDate();
+  },
+
+  createdAt: new Date()
+});
+
+
+// This is one way of doing it
+// In development I expose a method that seeds the database
+// So in the Chrome console I can type `Meteor.call('seedUsers', 5)` 
+// and 5 users will pop into existance with random attributes. You
+// can do this for all your collections.
+
+if (process.env.NODE_ENV === "development") {
+  Meteor.methods({
+    seedUsers: function(amount){
+      for(var i = 0; i < amount; i++) {
+        Factory.create('user');
+      }
+    },
+
+    upgradeMe: function(){
+      return Roles.addUsersToRoles(this.userId, ['admin']);
+    }
+  });
+}

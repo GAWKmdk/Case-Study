@@ -1,0 +1,6 @@
+Modules.find({}, {sort: {position: 1}, limit: 10, fields: {name: 1, body: 0} });
+Tags.find({name: {$in: usedTags}});
+Modules.find(
+  {tags: {$in: search}},
+  {sort: {position: 1}}
+)

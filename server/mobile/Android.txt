@@ -1,0 +1,17 @@
+// Make it so android back button exits app when on home screen
+// (using Iron Router)
+// I just put this snippet in /client/initialize/androidBackButton.js
+
+var onDeviceReady = function() {
+  document.addEventListener("backbutton", (function(e) {
+    if (Router.current().route.getName() === 'home') {
+      e.preventDefault();
+      navigator.app.exitApp();
+    } else {
+      navigator.app.backHistory();
+    }
+  }), false);
+};
+
+document.addEventListener("deviceready", onDeviceReady, false);
+view r

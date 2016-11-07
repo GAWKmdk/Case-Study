@@ -1,0 +1,39 @@
+# Core
+meteor add iron:router # Necessity... should be part of Meteor
+meteor add accounts-password # For when you want accounts
+meteor add aldeed:collection2 # This is to specify a schema for your collections so your data is consistent
+meteor add msavin:mongol # To easily view/edit published data in browser
+meteor add momentjs:moment # For working with dates and times
+meteor add alanning:roles # User roles
+meteor add spiderable # So google bots can see your site
+meteor add lookback:seo # For changing your page titles and adding SEO stuff
+meteor add meteorhacks:npm # Gives you access to NPM modules
+meteor add lookback:emails # For creating email templates
+meteor add differential:workers # Background processes
+meteor add meteorhacks:kadira # For tracking performance - warning: real product with paid tiers (there is a free tier though)
+meteor add houston:admin # To view and manipulate your data - could also use Robomongo
+meteor add digilord:faker # For creating random attributes - use with factory below
+meteor add dburles:factory # Allows you to easily add records to your database for testing/development
+meteor add matb33:collection-hooks # Extends Mongo.Collection with before/after hooks for insert, update, remove, find, and findOne.
+
+
+# Forms
+meteor add aldeed:autoform
+meteor add easy:search # for each retrival and search by tag attributes
+
+
+# Style
+meteor add mizzao:bootstrap-3 # Twitter's Bootstrap
+meteor add ian:accounts-ui-bootstrap-3 # If you use Bootstrap and have user accounts you can use this
+meteor add d0minikk:materialize-meteor # materializecss.com - For a slightly fresher look than bootstrap
+meteor add sacha:spin # A loading spinner
+meteor add mpowaga:autoform-summernote # For textareas manipulating html
+meteor add themeteorchef:bert # notifications
+meteor add webtempest:animate #static and transition animations
+meteor add fortawesome:fontawesome # Font Awesome scalable vector icons, CSS customizible, Retina friendly
+
+
+
+# Preprocessor
+meteor add coffeescript
+meteor add stylus # Like SASS or LESS

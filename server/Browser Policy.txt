@@ -1,0 +1,25 @@
+// First install the browser policy package:
+// meteor add browser-policy
+
+BrowserPolicy.framing.disallow();
+BrowserPolicy.content.disallowInlineScripts();
+BrowserPolicy.content.disallowEval();
+BrowserPolicy.content.allowInlineStyles();
+BrowserPolicy.content.allowFontDataUrl();
+
+// Change these to whatever services your app needs access to
+trusted = [
+  '*.google-analytics.com', 
+  '*.googleapis.com', 
+  '*.gstatic.com', 
+  '*.stripe.com', 
+  '*.facebook.com', 
+  '*.akamaihd.net', 
+  '*.github.com', 
+  '*.disquscdn.com', 
+  '*.cloudfront.net'
+];
+
+_.each(trusted, function(origin) {
+  return BrowserPolicy.content.allowOriginForAll(origin);
+});
