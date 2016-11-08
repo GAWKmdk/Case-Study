@@ -1,7 +1,7 @@
 # Case-Study
-Built on MeteorJS - Iron:router + some example templates
 
+This was to be the start on the "out-of-the-box" Corporate blog template assignment using Meteor JS, put on by the Coursera.org - University of London - Responsive Web Development course. But since half way into week 2, the course required I install their git hub example - which happens to currently be heavily layered in bower dependencies and back-end versioning-glint topped off with a final glaze of server-sided coffeescript - I dropped the course.
 
-This was the start to the "out-of-the-box" Corporate blog template put on by Coursera - University of London - Responsive Web Development course without installing their git hub example - which is heavily layered in bower dependencies and versioning-glint. 
+I wanted to keep my blog simple with minimal dependencies and version-splitting, so this is now just a simple navbar + routers model for a future MDV frame model.
 
-Currently just the navbar and routers until I figure out where the rest of the course material went ... 
+If you wanna DE-tangle their version build --- https://github.com/meteor-blog/meteor-blog --- may the farce be with ya. 
